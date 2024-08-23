@@ -1,0 +1,28 @@
+---
+title: "my_ggplot_theme.qmd"
+author: "Amanda Overbye"
+format: html
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(tidyverse)
+library(here)
+library(palmerpenguins)
+library(janitor)
+library(ggplot2)
+```
+
+```{r}
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point() +
+  theme(title = element_text(size = 16, color = "purple"),
+        plot.background = element_rect(fill = "black"),
+        panel.background = element_rect(fill = "orange"),
+        axis.text = element_text(color = "red"),
+        panel.grid = element_line("purple"),
+        panel.grid.minor = element_line("green"))
+```
+
